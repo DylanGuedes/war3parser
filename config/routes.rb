@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   root 'portal#index'
 
   #news controller
+  resources :news
   get '/news' => 'news#index'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
