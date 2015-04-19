@@ -1,5 +1,5 @@
 <h2><%= @replay.file_name %></h2>
 
 <h2>Description: <%= @replay.description %></h2>
-
+<h2>Uploader: <%= @replay.user.login %></h2>
 <h2><%= link_to "Download", @replay.replay_file_url %></h2>

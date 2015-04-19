@@ -1,4 +1,6 @@
 class Replay < ActiveRecord::Base
+  belongs_to :user
+  validates :user_id, :presence => true  
   mount_uploader :replay_file, ReplayFileUploader
 
   def parse_header

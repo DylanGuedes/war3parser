@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
-
+  has_many :replays
+  
   before_save { self.login = login.downcase }
   before_create :create_remember_token
 
