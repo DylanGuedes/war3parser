@@ -1,4 +1,15 @@
 class Replay < ActiveRecord::Base
+  def parse_header
+    store_dir = Dir.pwd
+    Dir.chdir("/home/dguedes/Desktop/war3portal")
+    file = File.open("#{self.file_name}", "r")
+    self.data = file.read(48)
+    # self.data = file.read(48)
+    # if !self.data.include?("Warcraft III recorded game\x1A")
+    #   "Not a replay file"
+    # end
+  end
+
   def convert_speed value
     case value
     when 0
@@ -137,6 +148,8 @@ class Replay < ActiveRecord::Base
       value = "The game has been paused by #{player}"
     when 0xFF
       value = "The game has been resumed by #{player}"
+    else
+      value -= 2
     end
   end
 end
