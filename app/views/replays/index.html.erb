@@ -1,3 +1,11 @@
 <% @replays.each do |r| %>
   <%= link_to "#{r.file_name}", "/replays/"+r.id.to_s %>
 <% end -%>
+
+
+<% @rep = Replay.new %>
+<%= form_for(@rep) do |f| %>
+  <h1>UPAR NOVO REPLAY</h1>
+  <%= f.file_field :replay_file %>
+  <%= f.submit %>
+<% end -%>

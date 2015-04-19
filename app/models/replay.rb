@@ -1,4 +1,6 @@
 class Replay < ActiveRecord::Base
+  mount_uploader :replay_file, ReplayFileUploader
+
   def parse_header
     # store_dir = Dir.pwd
     # Dir.chdir("/home/dguedes/Desktop/war3portal")
