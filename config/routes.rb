@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   root 'portal#index'
 
+  #portal controller
+  get '/help' => 'portal#help'
+  get '/about' => 'portal#about'
+
   #news controller
   resources :news
   get '/news' => 'news#index'
 
-
+  #replays controller
+  resources :replays
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

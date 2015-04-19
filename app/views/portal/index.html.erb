@@ -1,2 +1,8 @@
 <h1>NEWS</h1>
+<% @news.each do |n| %>
+  <%= link_to "#{n.content}", '/news/'+n.id.to_s %>, por <%= link_to "#{n.author}", '#' %>
+<% end -%>
 <h1>REPLAYS</h1>
+<% @replays.each do |r| %>
+  <%= link_to "#{r.file_name}", '/replays/'+r.id.to_s %>
+<% end -%>
