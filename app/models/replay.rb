@@ -1,13 +1,13 @@
 class Replay < ActiveRecord::Base
   def parse_header
-    store_dir = Dir.pwd
-    Dir.chdir("/home/dguedes/Desktop/war3portal")
-    file = File.open("#{self.file_name}", "r")
-    self.data = file.read(48)
+    # store_dir = Dir.pwd
+    # Dir.chdir("/home/dguedes/Desktop/war3portal")
+    # file = File.open("#{self.file_name}", "r")
     # self.data = file.read(48)
     # if !self.data.include?("Warcraft III recorded game\x1A")
     #   "Not a replay file"
     # end
+    # file.close
   end
 
   def convert_speed value
