@@ -1,6 +1,7 @@
 class ReplaysController < ApplicationController
   def index
     @replays = Replay.all
+    @replay = Replay.new
   end
 
   def show
@@ -27,6 +28,6 @@ class ReplaysController < ApplicationController
 
   private
   def replay_params
-    params.require(:replay).permit(:replay_file)
+    params.require(:replay).permit(:replay_file, :description, :file_name)
   end
 end

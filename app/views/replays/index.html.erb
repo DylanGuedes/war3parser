@@ -1,12 +1,21 @@
+<h1>Latest Replays</h1>
 <% @replays.each do |r| %>
-  <%= link_to "#{r.replay_file}", "/replays/"+r.id.to_s %>
-  <%= link_to "Download", r.replay_file_url %>
+  <h2>
+    <%= link_to "#{r.file_name}", "/replays/"+r.id.to_s %>
+    <%= link_to "Download", r.replay_file_url %>
+  </h2>
 <% end -%>
 
-
-<% @rep = Replay.new %>
-<%= form_for(@rep) do |f| %>
-  <h1>UPAR NOVO REPLAY</h1>
-  <%= f.file_field :replay_file %>
-  <%= f.submit %>
+<%= form_for(@replay) do |f| %>
+  <h1>New Replay</h1>
+  <h3>
+    <%= f.label :file_name, :value => "Name" %><br>
+    <%= f.text_field :file_name %>
+  </h3>
+  <h3>
+    <%= f.label :description, :value => "Description" %><br>
+    <%= f.text_area :description %>
+  </h3>
+  <h3><%= f.file_field :replay_file %></h3>
+  <h3><%= f.submit "Submit New Replay" %></h3>
 <% end -%>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150419141839) do
+ActiveRecord::Schema.define(version: 20150419145629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20150419141839) do
     t.text     "fp",            default: ""
     t.text     "data",          default: ""
     t.string   "replay_file"
+    t.text     "description",   default: " "
   end
 
   create_table "users", force: :cascade do |t|
