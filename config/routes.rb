@@ -12,6 +12,18 @@ Rails.application.routes.draw do
   #replays controller
   resources :replays
 
+  #users controller
+  resources :users
+  # get '/signin' => 'sessions#new'
+  # post '/signin' => 'sessions#create'
+  get '/signup' => 'users#new'
+
+  #sessions controller
+  resources :sessions
+  get '/signin' => 'sessions#new'
+  post '/signin' => 'sessions#create'
+  delete '/signout' => 'sessions#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
