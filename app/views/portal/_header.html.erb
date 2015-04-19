@@ -1,15 +1,23 @@
 <div id="container">
-  <h1>
-    <ul>
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'Replays', '#' %>
-      <%= link_to 'Help', '#' %>
-      <%= link_to 'About', '#' %>
-      <%# if signed_in? %>
-        <%#= link_to 'Members', '#' %>
-        <%#= link_to 'Profile', '#' %>
-        <%#= link_to 'Settings', '#' %>
-      <%# end %>
-    </ul>
-  </h1>
+  <div class="section group">  
+    <h3>
+      <ul>
+        <div class="col span_3_of_12">
+          <%= link_to 'Home', root_path %>
+        </div>
+        <div class="col span_2_of_12">
+          <%= link_to 'Replays', '#' %>
+        </div>
+        <div class="col span_2_of_12">
+          <%= link_to 'Help', '#' %>
+        </div>
+        <div class="col span_3_of_12">
+          <%= link_to 'About', '#' %>
+        </div>
+        <div class="col span_2_of_12">
+          <%= link_to 'News', news_path %>
+        </div>
+      </ul>
+    </h3>
+  </div>
 </div>
