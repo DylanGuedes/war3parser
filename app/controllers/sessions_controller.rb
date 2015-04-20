@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
       sign_in user
       redirect_to root_path
     else
+      flash.now[:danger] = 'Invalid email/pass combination'
       render 'new'
     end
   end

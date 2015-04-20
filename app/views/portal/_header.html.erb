@@ -3,13 +3,15 @@
     <%= link_to "WAR3PARSER", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Replays", replays_path %></li>
+        <li><%= link_to "Replays", replays_path, id: "minilogo" %></li>
         <% if !signed_in? %>
-          <li><%= link_to "Sign In", signin_path %></li>
-          <li><%= link_to "Sign Up", signup_path %></li>
+          <li><%= link_to "Sign In", signin_path, id: "minilogo" %></li>
+          <li><%= link_to "Sign Up", signup_path, id: "minilogo" %></li>
         <% else %>
-          <li><%= link_to "Sign Out", signout_path %></li>
-          <li><%= link_to "#{current_user}", current_user %></li>
+          <li><%= link_to "Sign Out", signout_path, id: "minilogo" %></li>
+          <li>
+            <%= link_to "#{current_user.login}", current_user, id: "minilogo" %>
+          </li>
         <% end -%>
       </ul>
     </nav>
