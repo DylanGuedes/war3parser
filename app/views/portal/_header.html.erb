@@ -1,5 +1,5 @@
 <div id="container">
-  <div class="section group">  
+  <div class="section group">
     <h3>
       <ul>
         <div class="col span_1_of_12">
@@ -11,12 +11,12 @@
         <div class="col span_2_of_12">
           <%= link_to 'Help', help_path %>
         </div>
-        <div class="col span_1_of_12">
+<!--         <div class="col span_1_of_12">
           <%= link_to 'About', about_path %>
         </div>
         <div class="col span_2_of_12">
           <%= link_to 'News', "/news" %>
-        </div>
+        </div> -->
         <% if signed_in? %>
           <div class="col span_2_of_12">
             <%= link_to "#{current_user.login}", current_user %>
