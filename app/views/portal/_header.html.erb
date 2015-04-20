@@ -1,40 +1,17 @@
-<div id="container">
-  <div class="section group">
-    <h3>
-      <ul>
-        <div class="col span_1_of_12">
-          <%= link_to 'Home', root_path %>
-        </div>
-        <div class="col span_2_of_12">
-          <%= link_to 'Replays', "/replays" %>
-        </div>
-        <div class="col span_2_of_12">
-          <%= link_to 'Help', help_path %>
-        </div>
-<!--         <div class="col span_1_of_12">
-          <%= link_to 'About', about_path %>
-        </div>
-        <div class="col span_2_of_12">
-          <%= link_to 'News', "/news" %>
-        </div> -->
-        <% if signed_in? %>
-          <div class="col span_2_of_12">
-            <%= link_to "#{current_user.login}", current_user %>
-          </div>
-          <div class="col span_2_of_12">
-            <%= link_to 'Sign out', signout_path, method: "delete" %>
-          </div>
-
-
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "WAR3PARSER", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Replays", replays_path %></li>
+        <% if !signed_in? %>
+          <li><%= link_to "Sign In", signin_path %></li>
+          <li><%= link_to "Sign Up", signup_path %></li>
         <% else %>
-          <div class="col span_2_of_12">
-            <%= link_to 'Sign Up', signup_path %>
-          </div>
-          <div class="col span_2_of_12">
-            <%= link_to 'Sign In', signin_path %>
-          </div>
-        <% end %>
+          <li><%= link_to "Sign Out", signout_path %></li>
+          <li><%= link_to "#{current_user}", current_user %></li>
+        <% end -%>
       </ul>
-    </h3>
+    </nav>
   </div>
-</div>
+</header>
