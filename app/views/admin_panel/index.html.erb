@@ -1,0 +1,64 @@
+<!-- users STUFF -->
+
+<center>
+<a class="btn btn-primary" data-toggle="collapse" href="#tablelist" aria-expanded="false">
+  <h5>USERS</h5>
+</a>
+</center>
+<div class="collapse" id="tablelist">
+  <div class="well">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Replays Count</th>
+          <th>Admin?</th>
+
+          <th>Destroy</th>
+          <th>Turn admin</th>
+        </tr>
+      </thead>
+      <% @users.each do |u| %>
+        <tbody>
+          <tr>
+            <th><%= link_to "#{u.login}", u %></th>
+            <th><%= link_to "#{u.replays.count}", '#' %></th>
+            <th><%= link_to "#{u.admin}", '#' %></th>
+
+            <th><%= link_to "Destroy #{u.login}", "/users/"+u.id.to_s, method: :delete %></th>
+            <th><%= link_to "#{u.login} to Admin", "/admin_panel/turn_admin/"+u.id.to_s, method: :post %></th>
+          </tr>
+        </tbody>
+      <% end -%>
+    </table>
+  </div>
+</div>
+
+<!-- replays STUFF -->
+<br><br>
+<center>
+<a class="btn btn-primary" data-toggle="collapse" href="#replayslist" aria-expanded="false">
+  <h5>REPLAYS</h5>
+</a>
+</center>
+<div class="collapse" id="replayslist">
+  <div class="well">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Uploader</th>
+          <th>Filename</th>
+        </tr>
+      </thead>
+      <% @replays.each do |r| %>
+        <tbody>
+          <tr>
+            <th><%= link_to "#{r.user.login}", '#' %></th>
+            <th><%= link_to "#{r.file_name}", '#' %></th>
+          </tr>
+        </tbody>
+      <% end -%>
+    </table>
+  </div>
+</div>
+

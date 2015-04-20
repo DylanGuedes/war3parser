@@ -16,6 +16,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    if @user.destroy
+      flash[:danger] = "User destroy'd"
+    else
+      flash[:danger] = "User not destroy'd"
+    end
+    redirect_to admin_panel_path
+  end
+
   private
   def user_params
     params.require(:user).permit(:login, :password, :password_confirmation)

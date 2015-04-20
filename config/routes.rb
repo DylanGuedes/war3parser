@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   #admin panel controller
   get '/admin_panel' => 'admin_panel#index'
+  post '/admin_panel/turn_admin/:id' => 'admin_panel#turn_admin'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
